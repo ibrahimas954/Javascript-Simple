@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Generator</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        body{
+            text-align: center;
+            margin-top: 130px;
+            
+        }
+        #hex-value{
+            color:red;
+            margin: auto;
+            width: 20%;
+            
+            padding: 10px;
+           
+        }
+
+        button{
+            background-color:#D3D3D3	;
+        }
+    </style>
+</head>
+<body>
+    <div id="hex-value">.</div>
+    <button onclick="change()">Bana Tıkla</button>
+     
+    <script>
+        var hexArr = ['A','B','C','D','E','F','a','b','c','d','e','f',1,2,3,4,5,6,7,8,9];
+        var counter,element;
+
+        function change()
+        {
+            hexValue = '#';
+            element = 0;
+            counter = 0;
+            while(counter < 6)
+            {
+                element = Math.floor(Math.random() * 20);
+                hexValue += hexArr[element];
+                counter++;
+            }           
+            document.body.style.backgroundColor = hexValue;
+            document.getElementById("hex-value").textContent = hexValue;
+        }
+    </script>
+</body>
+</html>
